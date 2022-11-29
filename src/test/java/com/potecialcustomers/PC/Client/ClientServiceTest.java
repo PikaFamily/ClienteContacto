@@ -56,6 +56,17 @@ public class ClientServiceTest {
         assertTrue(correctlyDeleted);
     }
     
+    /**
+     * 2# Not Delete Client 
+     * 
+     */
+    @ParameterizedTest
+    @MethodSource("clientIdGenerator")
+    void notDeleteClient(int falseClientId) {
+    	boolean notCorrectlyDeleted = clientService.clientDeleteID(falseClientId);
+        assertFalse(notCorrectlyDeleted);
+    }
+    
     /* Base de Datos */
     private static Stream<Arguments> clientGenerator() {
         return Stream.of(
