@@ -1,11 +1,10 @@
 package com.potecialcustomers.PC.Opportunity;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.stream.Stream;
 
-import org.assertj.core.api.Assert;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -30,7 +29,7 @@ public class OpportunityServiceTest {
     }
 
     /**
-     * 1# Add Oportunity
+     * Add Oportunity
      * 
      */
     @ParameterizedTest
