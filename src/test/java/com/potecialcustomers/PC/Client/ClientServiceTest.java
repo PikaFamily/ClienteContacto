@@ -1,5 +1,6 @@
 package com.potecialcustomers.PC.Client;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.stream.Stream;
@@ -38,17 +39,34 @@ public class ClientServiceTest {
      */
     @ParameterizedTest
     @MethodSource("clientGenerator")
-    void addOpportunity(ClientModel client) {
-        boolean correctlySaved = clientRepository.clientSave(client);
+    void saveClient(ClientModel correctClient) {
+        boolean correctlySaved = clientRepository.clientSave(correctClient);
 
         assertTrue(correctlySaved);
     }
 	
+    /**
+     * 2# Delete Client
+     * 
+     */
+    @ParameterizedTest
+    @MethodSource("clientIdGenerator")
+    void deleteClient(int correctClientId) {
+        boolean correctlyDeleted = clientService.clientDeleteID(correctClientId);
+        assertTrue(correctlyDeleted);
+    }
+    
     /* Base de Datos */
     private static Stream<Arguments> clientGenerator() {
         return Stream.of(
-                Arguments.of(new ClientModel(0, "David", "Parejo")),
-                Arguments.of(new ClientModel(1, "Mara", "Maqueda")));
+                Arguments.of(new ClientModel(0, "David", "Parejo"), new ClientModel(1, "Mara", "Maqueda")));
+
+    }
+    
+    /* Base de Datos */
+    private static Stream<Arguments> clientIdGenerator() {
+        return Stream.of(
+                Arguments.of(1, 2));
 
     }
 }

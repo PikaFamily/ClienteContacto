@@ -33,8 +33,8 @@ public class FakeClientRepository implements ClientRepository{
 	}
 
 	@Override
-	public ClientModel deleteId(int idClient) {
-		return null;
+	public boolean deleteId(int idClient) {
+		return false;
 	}
 
 	@Override

@@ -16,7 +16,7 @@ public interface ClientRepository extends JpaRepository<ClientModel, Integer>{
     
     public ArrayList<ClientModel> findAll();
     
-    public ClientModel deleteId(int idClient);
+    public boolean deleteId(int idClient);
     
     @Query("SELECT clientmodel FROM bank WHERE name LIKE %?1%")
     public ClientModel findName(String name);

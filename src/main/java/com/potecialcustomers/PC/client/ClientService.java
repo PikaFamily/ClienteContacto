@@ -12,5 +12,11 @@ public class ClientService {
 
 		return false;
 	}
+	
+	public boolean clientDeleteID(int idClient) {
+
+		return false;
+	}
+
 
 }
