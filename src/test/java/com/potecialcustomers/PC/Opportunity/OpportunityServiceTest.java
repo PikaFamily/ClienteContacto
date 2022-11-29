@@ -1,5 +1,6 @@
 package com.potecialcustomers.PC.Opportunity;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.stream.Stream;
@@ -29,7 +30,7 @@ public class OpportunityServiceTest {
     }
 
     /**
-     * Add Oportunity
+     * 1# Add Opportunity
      * 
      */
     @ParameterizedTest
@@ -39,7 +40,16 @@ public class OpportunityServiceTest {
 
         assertTrue(correctlySaved);
     }
+    /*
+     * 2# Not add Opportunity
+     */
+    @ParameterizedTest
+    @MethodSource("opportunityGenerator")
+    void notAddOpportunity(OpportunityModel notOpportunity) {
+        boolean notCorrectlySaved = opportunityRepository.opportunitySave(notOpportunity);
 
+        assertFalse(notCorrectlySaved);
+    }
     /* Base de Datos */
     private static Stream<Arguments> opportunityGenerator() {
         return Stream.of(
