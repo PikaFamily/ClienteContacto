@@ -57,7 +57,7 @@ public class ClientServiceTest {
     }
     
     /**
-     * 2# Not Delete Client 
+     * 3# Not Delete Client 
      * 
      */
     @ParameterizedTest
@@ -65,6 +65,15 @@ public class ClientServiceTest {
     void notDeleteClient(int falseClientId) {
     	boolean notCorrectlyDeleted = clientService.clientDeleteID(falseClientId);
         assertFalse(notCorrectlyDeleted);
+    }
+    /*
+     * 4#Not Add Client
+     */
+    @ParameterizedTest
+    @MethodSource("clientGenerator")
+    void notSaveClient(ClientModel notCorrectClient) {
+    	  boolean notCorrectlySaved = clientRepository.clientSave(notCorrectClient);
+          assertFalse(notCorrectlySaved);
     }
     
     /* Base de Datos */
