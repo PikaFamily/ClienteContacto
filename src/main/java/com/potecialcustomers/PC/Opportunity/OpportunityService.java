@@ -12,6 +12,9 @@ public class OpportunityService {
     OpportunityRepository opportunityRepo;
 
     public boolean opportunitySave(OpportunityModel opportunityModel) {
+        if (opportunityRepo.save(opportunityModel) != null) {
+            return true;
+        }
         return false;
     }
 
