@@ -16,8 +16,8 @@ public interface UserRepository extends JpaRepository<UserModel, Integer> {
 
     public void deleteById(int idOpportunity);
 
-    @Query(value = "SELECT usermodel FROM usermodel WHERE username LIKE %?1%", nativeQuery = true)
-    public UserModel findByName(String username);
+    @Query(value = "SELECT * FROM usermodel u WHERE u.username LIKE ?1", nativeQuery = true)
+    public Optional<UserModel> findByName(String username);
 
     @Query(value = "Select usermodel.username usermodel.password FROM bank WHERE username LIKE %?1% AND password LIKE %?2%", nativeQuery = true)
     public void checkUser(String username, String password);

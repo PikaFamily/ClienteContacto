@@ -15,8 +15,12 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Integer idUser;
+    @Column(unique = true, nullable = false)
     private String username;
     private String password;
+
+    public UserModel() {
+    }
 
     public UserModel(Integer idUser, String username, String password) {
         this.idUser = idUser;
