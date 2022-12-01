@@ -1,4 +1,4 @@
-package com.potecialcustomers.PC.client;
+package com.potecialcustomers.PC.contact;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -8,15 +8,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ClientRepository extends JpaRepository<ClientModel, Integer> {
+public interface ContactRepository extends JpaRepository<ContactModel, Integer> {
+    public Optional<ContactModel> findById(int idContact);
 
-    public Optional<ClientModel> findById(int idClient);
+    public ArrayList<ContactModel> findAll();
 
-    public ArrayList<ClientModel> findAll();
-
-    public void deleteById(int idClient);
+    public void deleteById(int idContact);
 
     @Query(value = "SELECT clientmodel FROM bank WHERE name LIKE %?1%", nativeQuery = true)
-    public ClientModel findByName(String name);
-
+    public ContactModel findByName(String client);
 }
