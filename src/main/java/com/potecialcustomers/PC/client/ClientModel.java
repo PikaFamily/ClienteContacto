@@ -6,7 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+/**
+ * Client Model Table
+ * This class is the model to create the table in the database, 
+ * in it we will be able to reflect the different fields with the desired parameters.
+ */
 @Entity
 @Table(name = "clientmodel")
 public class ClientModel {

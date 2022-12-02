@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller Class Opportunity
+ * With the controller class you can choose all the Opportunity api's for our
+ * frontend
+ */
 @RestController
 @RequestMapping("/api/opportunity")
 public class OpportunityControl {

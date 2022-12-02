@@ -29,10 +29,11 @@ public class ContactTest {
     @ParameterizedTest
     @MethodSource("contactGenerator")
     void addOpportunityIfContactIsNotClient() {
-        boolean correctlySaved = contactService.contactNotClientSaveOpportunity();
+        boolean correctlySaved = contactService.contactNotClientSaveOpportunity(null);
 
         assertTrue(correctlySaved);
     }
+
     /* Base de Datos */
 
     private static Stream<Arguments> contactGenerator() {

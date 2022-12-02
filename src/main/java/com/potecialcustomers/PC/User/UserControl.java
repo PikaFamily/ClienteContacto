@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller Class User
+ * With the controller class you can choose all the User api's for our frontend
+ */
 @RestController
 @RequestMapping("/api/users")
 public class UserControl {

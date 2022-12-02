@@ -15,6 +15,7 @@ public interface ContactRepository extends JpaRepository<ContactModel, Integer> 
 
     public void deleteById(int idContact);
 
-    @Query(value = "SELECT clientmodel FROM bank WHERE name LIKE %?1%", nativeQuery = true)
+    @Query(value = "SELECT * FROM contactmodel WHERE name LIKE ?1", nativeQuery = true)
     public ContactModel findByName(String client);
+
 }

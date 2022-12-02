@@ -9,6 +9,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Contact Model Table
+ * This class is the model to create the table in the database,
+ * in it we will be able to reflect the different fields with the desired
+ * parameters.
+ */
 @Entity
 @Table(name = "contactmodel")
 public class ContactModel {
@@ -21,8 +27,10 @@ public class ContactModel {
 	private String visitante;
 	private Date time;
 	private int idCliente;
+	private int idOpportunity;
 
-	public ContactModel(int id, String email, String llamada, String visitante, Date time, int idCliente) {
+	public ContactModel(int id, String email, String llamada, String visitante, Date time, int idCliente,
+			int idOpportunity) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -30,6 +38,11 @@ public class ContactModel {
 		this.visitante = visitante;
 		this.time = time;
 		this.idCliente = idCliente;
+		this.idOpportunity = idOpportunity;
+
+	}
+
+	public ContactModel() {
 	}
 
 	public int getId() {
@@ -84,4 +97,11 @@ public class ContactModel {
 		this.idCliente = idCliente;
 	}
 
+	public int getIdOpportunity() {
+		return idOpportunity;
+	}
+
+	public void setIdOpportunity(int idOpportunity) {
+		this.idOpportunity = idOpportunity;
+	}
 }

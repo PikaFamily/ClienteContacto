@@ -15,6 +15,6 @@ public interface OpportunityRepository extends JpaRepository<OpportunityModel, I
 
     public void deleteById(int idOpportunity);
 
-    @Query(value = "SELECT clientmodel FROM bank WHERE name LIKE %?1%", nativeQuery = true)
+    @Query(value = "SELECT * FROM opportunitymodel WHERE name LIKE ?1", nativeQuery = true)
     public OpportunityModel findByName(String client);
 }

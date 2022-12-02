@@ -47,8 +47,8 @@ public class OpportunityServiceTest {
     /* Base de Datos */
     private static Stream<Arguments> opportunityGenerator() {
         return Stream.of(
-                Arguments.of(new OpportunityModel(0, "cliente0")),
-                Arguments.of(new OpportunityModel(1, "cliente1")));
+                Arguments.of(new OpportunityModel(0, "cliente0", "potencial")),
+                Arguments.of(new OpportunityModel(1, "cliente1", "potencial")));
 
     }
 }
